@@ -1,0 +1,10 @@
+math: math.o conversions.o infiniteinteger.o 
+	cc math.o conversions.o infinite integers.o -o math
+math.o: math.c math.h trigo.c trigo.h
+	cc -Wall -c math.c trigo.c
+conversions.o: conversions.c conversions.h
+	cc -Wall -c conversions .c
+infiniteinteger.o:integer.c integer.h
+	cc -Wall -c integer.c
+
+
