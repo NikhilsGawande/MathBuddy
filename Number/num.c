@@ -529,11 +529,25 @@ Number MulNumber(Number a , Number b) {
 		an = AddNumber(an, bn);
 	//		printf("\n an is"); PrintNumber(an);
 	}
-	initNumber(c);
-	x = strlen(a.integer) - (a.fraction - a.integer) ;
-	y = strlen(b.integer) - (b.fraction - b.integer);
-	x--;
-	y--;
+	initNumber(&c);
+	x = (a.fraction - a.integer);
+	y = (b.fraction - b.integer);
+	x = x + y -1;
+	y = strlen(an.integer);
+	c.integer = (char *)malloc(y + 2);
+	strcpy(c.integer, an.integer);
+	p = c.integer;
+	q = c.integer;
+	q = q + y;
+	p = p + x - 1;
+	while(q != p)  {
+		q[1] = q[0];
+		q--;
+	}
+	q++;
+	*q = '.';
+	c.fraction = q; 
+	
 	
 	return c;
 
