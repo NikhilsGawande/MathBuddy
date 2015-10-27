@@ -24,7 +24,7 @@ void numpush(numstack *s, Number x) {
 		temp->next = NULL;
 	}
 	(s->i)++;
-	printf("s->i is %d", s->i);
+//	printf("s->i is %d", s->i);
 	
 }
 Number numpop(numstack *s) {
